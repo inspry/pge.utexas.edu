@@ -69,3 +69,7 @@ if (!function_exists('pge_event_deletion_schedule_cron')) {
 	}
 	add_action( 'wp', 'pge_event_deletion_schedule_cron' );
 }
+
+add_action('wp_footer', function() {
+	echo '<!-- asdfasdfasdfasdfa -->';
+});
