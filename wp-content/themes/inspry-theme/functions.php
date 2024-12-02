@@ -32,7 +32,3 @@ if (!function_exists('force_br_paragraph_tags_for_page')) {
     }
     add_filter('the_content', 'force_br_paragraph_tags_for_page', 20);
 }
-
-add_action('wp_footer', function() {
-    echo '<!-- production theme functions.php -->';
-});
