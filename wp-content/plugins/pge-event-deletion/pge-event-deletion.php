@@ -22,12 +22,20 @@ if (!function_exists('pge_event_deletion_run')) {
 		// Get today's date.
 		$date_now = strtotime( 'now' );
 	
-		// Get the events.
+		// Get the events. Only get events in "university event" tag.
 		$events = get_posts(
 			array(
 				'numberposts' => -1,
 				'post_type'   => 'event',
 				'post_status' => 'publish',
+				'tax_query'   => array(
+					array(
+						'taxonomy' => 'event-type',
+						'field'    => 'slug',
+						'terms'    => array( 'university-event' ),
+						'operator' => 'IN',
+					),
+				),
 			)
 		);
 	
